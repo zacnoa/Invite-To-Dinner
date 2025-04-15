@@ -11,12 +11,12 @@ body{
 }
 .meni-container{
     display:flex;
+    flex-direction: row;
     justify-content: space-around;
-    position: fixed;
     width:100%;
-    top:30%;
     margin:0 auto;
-    overflow: hidden;
+    overflow:auto;
+   
 }
 
 .meni{
@@ -24,12 +24,16 @@ body{
     background-color: white;
     width:25%;
     padding:30px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .button{
     border-radius:20px;
     color:black;
     border: 1px solid black;
     transition:color 0.5s, background-color 0.5s;
+
 }
 .button p{
     text-align: center;
@@ -42,7 +46,7 @@ body{
     background-color: rgb(48, 48, 48);
 }
 .meni{
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 .preambule{
     background-color: white;
@@ -57,12 +61,42 @@ body{
     border-radius: 20px;
     font-size: 2.3em;
     background-color: white;
-    padding:5%;
+    padding:20px;
     line-height: 1.5cm;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    display: inline-block;
+    position:relative;
+    width:50%;
+    margin:0 auto;
+    overflow:auto;
+}
+main{
+    margin-bottom:15px;
+}
+.menu-body{
+    margin:15px;
+}
 
+@media only screen and (max-width: 704px) { /* Dodan razmak */
+    .meni-container {
+        flex-direction: column; /* Promjena u column za mobilne uređaje */
+        align-items: center; /* Centriranje elemenata */
+        gap: 20px; /* Razmak između elemenata */
+        width:80%;
+        margin-top:20px;
+    }
+
+    .meni {
+        width: 90%;
+        font-size:1em; /* Povećanje širine za bolji prikaz na manjim ekranima */
+        border-radius:20px;
+        padding:15px    ;
+    }
+    main{
+        margin:15px 0;
+    }
+    .preambule{
+        line-height: 0.8cm;
+        width:80%;
+        padding:10px;
+        margin:0 auto;
+    }
 }
